@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CosmoZoom - Revolutionary platform for exploring NASA space images with AI-powered discovery">
+    <meta name="keywords" content="NASA, space exploration, JWST, Hubble, citizen science, AI pattern recognition">
+    <title>CosmoZoom - Unlocking the Infinite</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-telescope"></i>
+                <span>CosmoZoom</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#explore" class="nav-link">Explore</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                <a href="tutorials.html" class="nav-link">Tutorials</a>
+                <button class="btn-primary" onclick="openExplorerPage()">Launch Explorer</button>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="stars"></div>
+            <div class="cosmic-grid"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    The complete platform to
+                    <span class="gradient-text">explore the cosmos.</span>
+                </h1>
+                <p class="hero-description">
+                    Seamlessly zoom into massive NASA images, discover hidden patterns, 
+                    and collaborate with scientists worldwide to unlock the secrets of space.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary large" onclick="openExplorerPage()">
+                        <i class="fas fa-rocket"></i>
+                        Start Exploring
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="cosmic-viewer">
+                    <div class="viewer-frame">
+                        <div class="zoom-indicator">
+                            <span>Zoom: 1000x</span>
+                            <div class="zoom-controls">
+                            </div>
+                        </div>
+                        <div class="image-container">
+                            <img src="https://assets.science.nasa.gov/dynamicimage/assets/science/missions/webb/science/2022/07/STScI-01GA6KKWG229B16K4Q38CH3BXS.png?w=2000&h=1158&fit=crop&crop=faces%2Cfocalpoint" alt="JWST Carina Nebula" class="space-image">
+                            <div class="annotation-point" style="top: 30%; left: 40%;">
+                                <div class="annotation-marker"></div>
+                                <div class="annotation-tooltip">
+                                    <h4>Star Formation Region</h4>
+                                    <p>Newly discovered stellar nursery</p>
+                                </div>
+                            </div>
+                            <div class="annotation-point" style="top: 60%; left: 70%;">
+                                <div class="annotation-marker"></div>
+                                <div class="annotation-tooltip">
+                                    <h4>Protoplanetary Disk</h4>
+                                    <p>Potential planet formation site</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">2.5M+</div>
+                    <div class="stat-label">Images analyzed</div>
+                    <div class="stat-source">JWST & Hubble</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">99.7%</div>
+                    <div class="stat-label">Pattern accuracy</div>
+                    <div class="stat-source">AI Detection</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50K+</div>
+                    <div class="stat-label">New discoveries</div>
+                    <div class="stat-source">Citizen Scientists</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">10x</div>
+                    <div class="stat-label">Faster analysis</div>
+                    <div class="stat-source">vs Traditional Methods</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Use Section -->
+    <section class="how-to-use-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>How to Use CosmoZoom</h2>
+                <p>Your journey from beginner to expert space explorer</p>
+            </div>
+            
+            <div class="roadmap-container">
+                <div class="roadmap-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Launch the Explorer</h3>
+                        <p>Click "Launch Explorer" to access our advanced image analysis platform with real NASA data from JWST and Hubble telescopes.</p>
+                        <div class="step-icon"><i class="fas fa-rocket"></i></div>
+                    </div>
+                </div>
+                
+                <div class="roadmap-connector"></div>
+                
+                <div class="roadmap-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Select or Upload Images</h3>
+                        <p>Choose from our curated collection of stunning space images or upload your own astronomical data for analysis.</p>
+                        <div class="step-icon"><i class="fas fa-images"></i></div>
+                    </div>
+                </div>
+                
+                <div class="roadmap-connector"></div>
+                
+                <div class="roadmap-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Zoom and Explore</h3>
+                        <p>Use mouse wheel or zoom controls to explore images at pixel level. Track coordinates and discover hidden details.</p>
+                        <div class="step-icon"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                </div>
+                
+                <div class="roadmap-connector"></div>
+                
+                <div class="roadmap-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Run AI Analysis</h3>
+                        <p>Let our advanced AI automatically detect celestial objects, patterns, and anomalies with detailed metadata.</p>
+                        <div class="step-icon"><i class="fas fa-brain"></i></div>
+                    </div>
+                </div>
+                
+                <div class="roadmap-connector"></div>
+                
+                <div class="roadmap-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Make Discoveries</h3>
+                        <p>Annotate findings, save research notes, and contribute to citizen science by identifying new phenomena.</p>
+                        <div class="step-icon"><i class="fas fa-star"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="explore" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Revolutionary Space Exploration Tools</h2>
+                <p>Powered by cutting-edge AI and NASA's vast archives</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                    <h3>Infinite Zoom</h3>
+                    <p>Seamlessly explore from galaxy clusters down to individual pixels using advanced IIIF technology</p>
+                    <div class="feature-demo">
+                        <div class="zoom-demo">
+                            <div class="zoom-level active">Galaxy</div>
+                            <div class="zoom-level">Nebula</div>
+                            <div class="zoom-level">Star System</div>
+                            <div class="zoom-level">Pixel Level</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI Pattern Recognition</h3>
+                    <p>Machine learning algorithms identify celestial objects, anomalies, and previously unknown phenomena</p>
+                    <div class="feature-demo">
+                        <div class="ai-indicators">
+                            <div class="indicator detected">
+                                <span class="dot"></span>
+                                <span>Exoplanet Candidate</span>
+                            </div>
+                            <div class="indicator processing">
+                                <span class="dot"></span>
+                                <span>Analyzing Structure</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Collaborative Discovery</h3>
+                    <p>Join thousands of citizen scientists in labeling features and making groundbreaking discoveries</p>
+                    <div class="feature-demo">
+                        <div class="collaboration-stats">
+                            <div class="collab-item">
+                                <i class="fas fa-user-astronaut"></i>
+                                <span>15,847 Active Explorers</span>
+                            </div>
+                            <div class="collab-item">
+                                <i class="fas fa-tags"></i>
+                                <span>2.3M Labels Added Today</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why We Are Creative Section -->
+    <section class="creativity-section">
+        <div class="container">
+            <div class="creativity-content">
+                <div class="creativity-text">
+                    <h2>Why We Are Creative</h2>
+                    <p class="creativity-intro">Innovation meets exploration in our unique approach to space discovery</p>
+                    
+                    <div class="creativity-points">
+                        <div class="creativity-point">
+                            <div class="point-icon"><i class="fas fa-lightbulb"></i></div>
+                            <div class="point-content">
+                                <h3>AI-Powered Discovery</h3>
+                                <p>We combine cutting-edge machine learning with human intuition to uncover patterns that traditional methods miss. Our AI doesn't replace scientists—it empowers them.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="creativity-point">
+                            <div class="point-icon"><i class="fas fa-users"></i></div>
+                            <div class="point-content">
+                                <h3>Democratizing Space Science</h3>
+                                <p>We believe everyone should have access to NASA's incredible archives. CosmoZoom makes professional-grade tools accessible to students, educators, and citizen scientists worldwide.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="creativity-point">
+                            <div class="point-icon"><i class="fas fa-globe-asia"></i></div>
+                            <div class="point-content">
+                                <h3>Global Perspective</h3>
+                                <p>Built by Team Mugdho from Bangladesh, we bring a fresh perspective to space exploration, combining local innovation with global ambition to push boundaries.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="creativity-point">
+                            <div class="point-icon"><i class="fas fa-infinity"></i></div>
+                            <div class="point-content">
+                                <h3>Infinite Possibilities</h3>
+                                <p>From pixel-level zoom to real-time collaboration, we're constantly innovating to make space exploration more interactive, intuitive, and inspiring.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="creativity-visual">
+                    <div class="innovation-showcase">
+                        <div class="showcase-item">
+                            <i class="fas fa-microscope"></i>
+                            <span>Pixel-Level Analysis</span>
+                        </div>
+                        <div class="showcase-item">
+                            <i class="fas fa-network-wired"></i>
+                            <span>Neural Networks</span>
+                        </div>
+                        <div class="showcase-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Real-Time Processing</span>
+                        </div>
+                        <div class="showcase-item">
+                            <i class="fas fa-satellite-dish"></i>
+                            <span>Live Data Feeds</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Sources Section -->
+    <section class="data-sources">
+        <div class="container">
+            <h2>Powered by NASA's Premier Archives</h2>
+            <div class="sources-grid">
+                <div class="source-card">
+                    <div class="source-logo">
+                        <i class="fas fa-satellite"></i>
+                    </div>
+                    <h3>JWST Archive</h3>
+                    <p>Latest infrared observations from the James Webb Space Telescope</p>
+                    <div class="source-stats">
+                        <span>850TB+ Data</span>
+                        <span>Real-time Updates</span>
+                    </div>
+                </div>
+                <div class="source-card">
+                    <div class="source-logo">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Hubble MAST</h3>
+                    <p>Three decades of stunning visible light imagery from Hubble</p>
+                    <div class="source-stats">
+                        <span>1.5M+ Images</span>
+                        <span>30 Years Archive</span>
+                    </div>
+                </div>
+                <div class="source-card">
+                    <div class="source-logo">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>USGS Astrogeology</h3>
+                    <p>Comprehensive planetary surface maps and geological data</p>
+                    <div class="source-stats">
+                        <span>All Planets</span>
+                        <span>High Resolution</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Aims Section -->
+    <section class="future-aims-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Future Aims</h2>
+                <p>Building the next generation of space exploration tools</p>
+            </div>
+            
+            <div class="aims-grid">
+                <div class="aim-card">
+                    <div class="aim-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Advanced AI Models</h3>
+                    <p style="text-align: justify;">Develop more sophisticated machine learning algorithms capable of detecting exoplanets, dark matter signatures, and previously unknown celestial phenomena with 99.9% accuracy.</p>
+                    <div class="aim-timeline">Target: 2026</div>
+                </div>
+                
+
+                <div class="aim-card">
+                    <div class="aim-icon">
+                        <i class="fas fa-vr-cardboard"></i>
+                    </div>
+                    <h3>VR/AR Integration</h3>
+                    <p style="text-align: justify;">Create immersive virtual reality experiences that allow users to "walk through" nebulae and galaxy clusters, making space exploration truly three-dimensional.</p>
+                    <div class="aim-timeline">Target: 2026</div>
+                </div>
+                
+                <div class="aim-card">
+                    <div class="aim-icon">
+                        <i class="fas fa-satellite"></i>
+                    </div>
+                    <h3>Real-Time Telescope Access</h3>
+                    <p style="text-align: justify;">Partner with observatories worldwide to provide real-time access to telescope data, enabling instant analysis of cosmic events as they happen.</p>
+                    <div class="aim-timeline">Target: 2027</div>
+                </div>
+                
+                <div class="aim-card">
+                    <div class="aim-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Educational Platform</h3>
+                    <p style="text-align: justify;">Build comprehensive learning modules for schools and universities, complete with interactive lessons, quizzes, and certification programs in astronomy and data science.</p>
+                    <div class="aim-timeline">Target: 2026</div>
+                </div>
+                
+                <div class="aim-card">
+                    <div class="aim-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Applications</h3>
+                    <p style="text-align: justify;">Launch native iOS and Android apps with offline capabilities, allowing space exploration anywhere, anytime, even without internet connection.</p>
+                    <div class="aim-timeline">Target: 2025</div>
+                </div>
+                
+                <div class="aim-card">
+                    <div class="aim-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Global Collaboration Network</h3>
+                    <p style="text-align: justify;">Establish a worldwide network of citizen scientists, professional astronomers, and AI researchers working together to unlock the universe's mysteries.</p>
+                    <div class="aim-timeline">Target: 2027</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Explorer Preview -->
+    <section id="explore" class="explorer-preview">
+        <div class="container">
+            <div class="preview-header">
+                <h2>Experience CosmoZoom</h2>
+                <p class="preview-subtitle">Try our interactive explorer with real NASA data below</p>
+            </div>
+            
+            <div class="explorer-interface">
+                <div class="explorer-sidebar">
+                    <div class="sidebar-section">
+                        <h3>Image Collections</h3>
+                        <div class="collection-list">
+                            <div class="collection-item active" data-image="https://assets.science.nasa.gov/dynamicimage/assets/science/missions/webb/science/2022/07/STScI-01GA6KKWG229B16K4Q38CH3BXS.png?w=2000&h=1158&fit=crop&crop=faces%2Cfocalpoint">
+                                <i class="fas fa-star"></i>
+                                <span>JWST Carina Nebula</span>
+                                <span class="count">Real Data</span>
+                            </div>
+                            <div class="collection-item" data-image="hubble-deep-field-default.png">
+                                <i class="fas fa-galaxy"></i>
+                                <span>Hubble Deep Field</span>
+                                <span class="count">Real Data</span>
+                            </div>
+                            <div class="collection-item">
+                                <i class="fas fa-planet-ringed"></i>
+                                <span>Planetary Nebulae</span>
+                                <span class="count">NASA Archive</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>AI Discoveries</h3>
+                        <div class="discovery-list">
+                            <div class="discovery-item">
+                                <div class="discovery-icon new"></div>
+                                <div class="discovery-info">
+                                    <span class="discovery-title">Brown Dwarf Candidate</span>
+                                    <span class="discovery-confidence">97% confidence</span>
+                                </div>
+                            </div>
+                            <div class="discovery-item">
+                                <div class="discovery-icon verified"></div>
+                                <div class="discovery-info">
+                                    <span class="discovery-title">Gravitational Lens</span>
+                                    <span class="discovery-confidence">Verified</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="explorer-main">
+                    <div class="explorer-toolbar">
+                        <div class="toolbar-left">
+                            <button class="tool-btn active" title="Pan Tool">
+                                <i class="fas fa-mouse-pointer"></i>
+                            </button>
+                            <button class="tool-btn" title="Zoom Tool">
+                                <i class="fas fa-search-plus"></i>
+                            </button>
+                            <button class="tool-btn" title="Label Tool">
+                                <i class="fas fa-tag"></i>
+                            </button>
+                            <button class="tool-btn" title="Measure Tool">
+                                <i class="fas fa-ruler"></i>
+                            </button>
+                            <button class="tool-btn" title="Fit to Screen" onclick="fitToScreen()">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                            </button>
+                            <button class="tool-btn ai-analysis" title="Run AI Pattern Analysis" onclick="runAIAnalysis()">
+                                <i class="fas fa-brain"></i>
+                            </button>
+                        </div>
+                        <div class="toolbar-center">
+                            <div class="coordinates" id="coordinate-display">
+                                RA: 10h 36m 41.0s | Dec: -59° 52' 04" | Pixel: (0, 0)
+                            </div>
+                        </div>
+                        <div class="toolbar-right">
+                            <div class="zoom-display">
+                                Zoom: <span id="zoom-level">100%</span> | 
+                                Pixel Scale: <span id="pixel-scale">0.031"/px</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="explorer-canvas">
+                        <div class="canvas-container" id="canvas-container">
+                            <img src="https://assets.science.nasa.gov/dynamicimage/assets/science/missions/webb/science/2022/07/STScI-01GA6KKWG229B16K4Q38CH3BXS.png?w=2000&h=1158&fit=crop&crop=faces%2Cfocalpoint" alt="JWST Carina Nebula" class="main-image" id="main-image">
+                            <div class="overlay-annotations" id="overlay-annotations">
+                                <div class="annotation" style="top: 25%; left: 30%;">
+                                    <div class="annotation-marker galaxy"></div>
+                                    <div class="annotation-label">Star Formation Region</div>
+                                </div>
+                                <div class="annotation" style="top: 60%; left: 65%;">
+                                    <div class="annotation-marker star"></div>
+                                    <div class="annotation-label">Stellar Nursery</div>
+                                </div>
+                                <div class="annotation" style="top: 40%; left: 80%;">
+                                    <div class="annotation-marker unknown"></div>
+                                    <div class="annotation-label">Unknown Object - AI Flagged</div>
+                                </div>
+                            </div>
+                            <div class="crosshair" id="crosshair"></div>
+                            <div class="zoom-box" id="zoom-box"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Unlock the Infinite?</h2>
+                <p>Join thousands of explorers making groundbreaking discoveries every day</p>
+                <div class="cta-buttons">
+                    <button class="btn-primary large" onclick="openExplorerPage()">
+                        <i class="fas fa-rocket"></i>
+                        Launch CosmoZoom
+                    </button>
+                    <button class="btn-outline large">
+                        <i class="fas fa-download"></i>
+                        Download App
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer with Bangladesh flag -->
+    <footer class="footer-enhanced">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-telescope"></i>
+                        <span>CosmoZoom</span>
+                    </div>
+                    <p>Unlocking the infinite mysteries of space through collaborative exploration and AI-powered discovery.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="explorer.html">JWST Archive</a></li>
+                        <li><a href="explorer.html">Hubble Gallery</a></li>
+                        <li><a href="explorer.html">Planetary Maps</a></li>
+                        <li><a href="explorer.html">AI Discoveries</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="api-docs.html">API Documentation</a></li>
+                        <li><a href="tutorials.html">Tutorials</a></li>
+                        <li><a href="research.html">Research Papers</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Team</h4>
+                    <div class="team-info">
+                        <div class="team-flag">
+                            <img src="https://flagcdn.com/w40/bd.png" alt="Bangladesh Flag" class="flag-icon">
+                            <span>Team Mugdho</span>
+                        </div>
+                        <p>Proudly representing Bangladesh in NASA Space Apps Challenge 2025</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-credits">
+                    <div class="credits-main">
+                        <p>&copy; 2025 Team Mugdho - NASA Space Apps Challenge</p>
+                        <div class="flag-credit">
+                            <img src="https://flagcdn.com/w20/bd.png" alt="Bangladesh" class="inline-flag">
+                            <span>Made with ❤️ in Bangladesh</span>
+                        </div>
+                    </div>
+                    <p class="powered-by">Powered by NASA MAST, USGS Astrogeology, and IIIF</p>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="nasa-open-data.html">NASA Open Data</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Explorer Modal -->
+    <div id="explorer-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>CosmoZoom Explorer</h2>
+                <button class="modal-close" onclick="closeExplorer()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="explorer-full">
+                    <div class="explorer-controls">
+                        <div class="control-group">
+                            <label>Data Source:</label>
+                            <select id="data-source">
+                                <option value="jwst">James Webb Space Telescope</option>
+                                <option value="hubble">Hubble Space Telescope</option>
+                                <option value="usgs">USGS Planetary Maps</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label>Object Type:</label>
+                            <select id="object-type">
+                                <option value="all">All Objects</option>
+                                <option value="galaxies">Galaxies</option>
+                                <option value="nebulae">Nebulae</option>
+                                <option value="stars">Stars</option>
+                                <option value="planets">Planets</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <button class="btn-primary" onclick="loadRandomImage()">
+                                <i class="fas fa-random"></i>
+                                Random Discovery
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="explorer-viewer">
+                        <div class="viewer-container" id="full-viewer-container">
+                            <img id="explorer-image" src="https://assets.science.nasa.gov/dynamicimage/assets/science/missions/webb/science/2022/07/STScI-01GA6KKWG229B16K4Q38CH3BXS.png?w=2000&h=1158&fit=crop&crop=faces%2Cfocalpoint" alt="Space Explorer">
+                            <div class="viewer-overlay">
+                                <div class="zoom-controls">
+                                    <button onclick="zoomIn()">+</button>
+                                    <button onclick="zoomOut()">-</button>
+                                    <button onclick="resetZoom()">Reset</button>
+                                    <button onclick="fitToScreen()">Fit</button>
+                                </div>
+                                <div class="info-panel">
+                                    <h3 id="image-title">JWST Carina Nebula</h3>
+                                    <p id="image-description">Stellar nursery showing star formation in unprecedented detail</p>
+                                    <div class="image-metadata">
+                                        <span>Resolution: <span id="image-resolution">4096x4096</span></span>
+                                        <span>Zoom: <span id="current-zoom">100%</span></span>
+                                        <span>Pixel Scale: <span id="current-pixel-scale">0.031"/px</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="crosshair" id="modal-crosshair"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

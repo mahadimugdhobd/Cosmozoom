@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CosmoZoom Explorer - Advanced Space Image Analysis</title> 
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="explorer-page">
+    <div class="explorer-fullscreen"> 
+        <div class="explorer-header-enhanced">
+            <div class="header-left">
+                <div class="explorer-brand-enhanced">
+                    <div class="brand-icon">
+                        <i class="fas fa-telescope"></i>
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-name">CosmoZoom</span>
+                        <span class="brand-subtitle">Advanced Explorer</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="header-center"> 
+                <div class="control-group-enhanced">
+                    <div class="control-item">
+                        <label><i class="fas fa-satellite"></i> Data Type:</label>
+                        <select id="data-type" onchange="changeDataType()">
+                            <option value="optical">Optical/Visible Light</option>
+                            <option value="infrared">Infrared (IR)</option>
+                            <option value="ultraviolet">Ultraviolet (UV)</option>
+                            <option value="xray">X-Ray</option>
+                            <option value="radio">Radio Waves</option>
+                            <option value="spectral">Spectral Data</option>
+                            <option value="photometric">Photometric</option>
+                            <option value="polarimetric">Polarimetric</option>
+                        </select>
+                    </div>
+                    <div class="control-item">
+                        <label><i class="fas fa-satellite-dish"></i> Data Source:</label>
+                        <select id="data-source" onchange="changeDataSource()">
+                            <option value="jwst">James Webb (JWST)</option>
+                            <option value="hubble">Hubble (HST)</option>
+                            <option value="chandra">Chandra X-Ray</option>
+                            <option value="spitzer">Spitzer</option>
+                            <option value="usgs">USGS Planetary</option>
+                            <option value="eso">ESO Ground-Based</option>
+                            <option value="alma">ALMA Radio</option>
+                        </select>
+                    </div>
+                    <div class="control-item">
+                        <label><i class="fas fa-filter"></i> Object Type:</label>
+                        <select id="object-type" onchange="filterByObjectType()">
+                            <option value="all">All Objects</option>
+                            <optgroup label="Galaxies">
+                                <option value="spiral-galaxy">Spiral Galaxies</option>
+                                <option value="elliptical-galaxy">Elliptical Galaxies</option>
+                                <option value="irregular-galaxy">Irregular Galaxies</option>
+                                <option value="galaxy-cluster">Galaxy Clusters</option>
+                            </optgroup>
+                            <optgroup label="Nebulae">
+                                <option value="emission-nebula">Emission Nebulae</option>
+                                <option value="reflection-nebula">Reflection Nebulae</option>
+                                <option value="planetary-nebula">Planetary Nebulae</option>
+                                <option value="supernova-remnant">Supernova Remnants</option>
+                            </optgroup>
+                            <optgroup label="Stars">
+                                <option value="main-sequence">Main Sequence Stars</option>
+                                <option value="red-giant">Red Giants</option>
+                                <option value="white-dwarf">White Dwarfs</option>
+                                <option value="neutron-star">Neutron Stars</option>
+                                <option value="binary-system">Binary Systems</option>
+                            </optgroup>
+                            <optgroup label="Planets & Moons">
+                                <option value="terrestrial">Terrestrial Planets</option>
+                                <option value="gas-giant">Gas Giants</option>
+                                <option value="ice-giant">Ice Giants</option>
+                                <option value="exoplanet">Exoplanets</option>
+                                <option value="moon">Moons</option>
+                            </optgroup>
+                            <optgroup label="Exotic Objects">
+                                <option value="black-hole">Black Holes</option>
+                                <option value="quasar">Quasars</option>
+                                <option value="pulsar">Pulsars</option>
+                                <option value="brown-dwarf">Brown Dwarfs</option>
+                                <option value="protoplanetary-disk">Protoplanetary Disks</option>
+                                <option value="gravitational-lens">Gravitational Lenses</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="control-item">
+                        <label><i class="fas fa-sliders-h"></i> Wavelength Filter:</label>
+                        <select id="wavelength-filter" onchange="applyWavelengthFilter()">
+                            <option value="none">No Filter</option>
+                            <option value="f090w">F090W (0.9μm)</option>
+                            <option value="f150w">F150W (1.5μm)</option>
+                            <option value="f200w">F200W (2.0μm)</option>
+                            <option value="f277w">F277W (2.77μm)</option>
+                            <option value="f356w">F356W (3.56μm)</option>
+                            <option value="f444w">F444W (4.44μm)</option>
+                            <option value="halpha">H-alpha (656nm)</option>
+                            <option value="oiii">OIII (500nm)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <button class="btn-header" onclick="loadRandomImage()">
+                    <i class="fas fa-random"></i>
+                    <span>Random Discovery</span>
+                </button>
+                <button class="btn-header" onclick="window.location.href='index.html'">
+                    <i class="fas fa-home"></i>
+                    <span>Back to Home</span>
+                </button>
+            </div>
+        </div>
+        <div class="explorer-main-interface">
+            <div class="explorer-sidebar-enhanced">
+                 New Image Upload Section 
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-upload"></i> Upload Image</h3>
+                    <div class="upload-section">
+                        <div class="upload-area" id="upload-area">
+                            <input type="file" id="image-upload" accept="image/*" onchange="handleImageUpload(event)">
+                            <div class="upload-content">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Drop image here or click to browse</p>
+                                <span class="upload-hint">Supports JPG, PNG, FITS</span>
+                            </div>
+                        </div>
+                        <div class="url-input-section">
+                            <input type="url" id="image-url" placeholder="Or paste image URL here..." onkeypress="handleUrlInput(event)">
+                            <button onclick="loadImageFromUrl()" class="btn-load-url">
+                                <i class="fas fa-link"></i>
+                                Load
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-images"></i> Image Collections</h3>
+                    <div class="collection-list">
+                        <div class="collection-item active" data-image="https://assets.science.nasa.gov/dynamicimage/assets/science/missions/webb/science/2022/07/STScI-01GA6KKWG229B16K4Q38CH3BXS.png?w=2000&h=1158&fit=crop&crop=faces%2Cfocalpoint">
+                            <i class="fas fa-star"></i>
+                            <div class="collection-info">
+                                <span class="collection-name">JWST Carina Nebula</span>
+                                <span class="collection-details">4096×4096 • 0.031"/px</span>
+                            </div>
+                        </div>
+                        <div class="collection-item" data-image="hubble-deep-field-default.png">
+                            <i class="fas fa-galaxy"></i>
+                            <div class="collection-info">
+                                <span class="collection-name">Hubble Deep Field</span>
+                                <span class="collection-details">3200×3200 • 0.05"/px</span>
+                            </div>
+                        </div>
+                        <div class="collection-item">
+                            <i class="fas fa-planet-ringed"></i>
+                            <div class="collection-info">
+                                <span class="collection-name">Planetary Nebulae</span>
+                                <span class="collection-details">NASA Archive</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-tools"></i> Advanced Tools</h3>
+                    <div class="tool-list-enhanced">
+                        <button class="tool-item-enhanced" onclick="runEnhancedAIAnalysis()">
+                            <i class="fas fa-brain"></i>
+                            <div class="tool-info">
+                                <span class="tool-name">AI Pattern Analysis</span>
+                                <span class="tool-desc">Auto-detect celestial objects</span>
+                            </div>
+                        </button>
+                        <button class="tool-item-enhanced" onclick="measureDistance()">
+                            <i class="fas fa-ruler"></i>
+                            <div class="tool-info">
+                                <span class="tool-name">Distance Measurement</span>
+                                <span class="tool-desc">Angular & pixel distance</span>
+                            </div>
+                        </button>
+                        <button class="tool-item-enhanced" onclick="spectralAnalysis()">
+                            <i class="fas fa-chart-line"></i>
+                            <div class="tool-info">
+                                <span class="tool-name">Spectral Analysis</span>
+                                <span class="tool-desc">Color & wavelength data</span>
+                            </div>
+                        </button>
+                        <button class="tool-item-enhanced" onclick="photometryTool()">
+                            <i class="fas fa-sun"></i>
+                            <div class="tool-info">
+                                <span class="tool-name">Photometry Tool</span>
+                                <span class="tool-desc">Brightness measurements</span>
+                            </div>
+                        </button>
+                        <button class="tool-item-enhanced" onclick="annotationTool()">
+                            <i class="fas fa-tags"></i>
+                            <div class="tool-info">
+                                <span class="tool-name">Annotation Tool</span>
+                                <span class="tool-desc">Label & mark features</span>
+                            </div>
+                        </button>
+                        <button class="tool-item-enhanced" onclick="exportImage()">
+                            <i class="fas fa-download"></i>
+                            <div class="tool-info">
+                                <span class="tool-name">Export Image</span>
+                                <span class="tool-desc">Save with annotations</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="explorer-viewer-area">
+                <div class="explorer-toolbar-enhanced">
+                    <div class="toolbar-scrollable">
+                        <div class="toolbar-left">
+                            <button class="tool-btn active" title="Pan Tool">
+                                <i class="fas fa-mouse-pointer"></i>
+                            </button>
+                            <button class="tool-btn" title="Zoom Tool">
+                                <i class="fas fa-search-plus"></i>
+                            </button>
+                            <button class="tool-btn" title="Label Tool">
+                                <i class="fas fa-tag"></i>
+                            </button>
+                            <button class="tool-btn" title="Measure Tool">
+                                <i class="fas fa-ruler"></i>
+                            </button>
+                            <button class="tool-btn" title="Fit to Screen" onclick="fitToScreen()">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                            </button>
+                            <button class="tool-btn ai-analysis" title="Run AI Pattern Analysis" onclick="runEnhancedAIAnalysis()">
+                                <i class="fas fa-brain"></i>
+                            </button>
+                        </div>
+                        <div class="toolbar-center-enhanced">
+                            <div class="coordinates-display" id="coordinate-display">
+                                <div class="coord-item">
+                                    <span class="coord-label">RA:</span>
+                                    <span class="coord-value" id="ra-value">10h 36m 41.0s</span>
+                                </div>
+                                <div class="coord-item">
+                                    <span class="coord-label">Dec:</span>
+                                    <span class="coord-value" id="dec-value">-59° 52' 04"</span>
+                                </div>
+                                <div class="coord-item">
+                                    <span class="coord-label">Pixel:</span>
+                                    <span class="coord-value" id="pixel-coords">(0, 0)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="toolbar-right-enhanced">
+                            <div class="zoom-info">
+                                <div class="zoom-item">
+                                    <span class="zoom-label">Zoom:</span>
+                                    <span class="zoom-value" id="zoom-level">100%</span>
+                                </div>
+                                <div class="zoom-item">
+                                    <span class="zoom-label">Scale:</span>
+                                    <span class="zoom-value" id="pixel-scale">0.031"/px</span>
+                                </div>
+                            </div>
+                            <div class="zoom-controls-enhanced">
+                                <button onclick="zoomOut()" title="Zoom Out" class="zoom-btn">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <button onclick="resetZoom()" title="Reset Zoom" class="zoom-btn">
+                                    <i class="fas fa-home"></i>
+                                </button>
+                                <button onclick="zoomIn()" title="Zoom In" class="zoom-btn">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="explorer-canvas" id="explorer-canvas">
+                    <div class="canvas-container" id="canvas-container">
+                        <img src="https://assets.science.nasa.gov/dynamicimage/assets/science/missions/webb/science/2022/07/STScI-01GA6KKWG229B16K4Q38CH3BXS.png?w=2000&h=1158&fit=crop&crop=faces%2Cfocalpoint" alt="JWST Carina Nebula" class="main-image" id="main-image">
+                        <div class="overlay-annotations" id="overlay-annotations">
+                            <div class="annotation" style="top: 25%; left: 30%;">
+                                <div class="annotation-marker galaxy"></div>
+                                <div class="annotation-label">Star Formation Region</div>
+                            </div>
+                            <div class="annotation" style="top: 60%; left: 65%;">
+                                <div class="annotation-marker star"></div>
+                                <div class="annotation-label">Stellar Nursery</div>
+                            </div>
+                            <div class="annotation" style="top: 40%; left: 80%;">
+                                <div class="annotation-marker unknown"></div>
+                                <div class="annotation-label">Unknown Object - AI Flagged</div>
+                            </div>
+                        </div>
+                        <div class="crosshair" id="crosshair"></div>
+                        <div class="zoom-box" id="zoom-box"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="explorer-info-panel">
+                <div class="info-section">
+                    <h3 id="image-title">JWST Carina Nebula</h3>
+                    <p id="image-description">Stellar nursery showing star formation in unprecedented detail with infrared imaging revealing hidden structures.</p>
+                    <div class="image-metadata-enhanced">
+                        <div class="metadata-row">
+                            <div class="metadata-item">
+                                <span class="label">Resolution:</span>
+                                <span class="value" id="image-resolution">4096×4096</span>
+                            </div>
+                            <div class="metadata-item">
+                                <span class="label">Current Zoom:</span>
+                                <span class="value" id="current-zoom">100%</span>
+                            </div>
+                        </div>
+                        <div class="metadata-row">
+                            <div class="metadata-item">
+                                <span class="label">Pixel Scale:</span>
+                                <span class="value" id="current-pixel-scale">0.031"/px</span>
+                            </div>
+                            <div class="metadata-item">
+                                <span class="label">Visible Pixels:</span>
+                                <span class="value" id="visible-pixels">4096×4096</span>
+                            </div>
+                        </div>
+                        <div class="metadata-row">
+                            <div class="metadata-item">
+                                <span class="label">Coordinates:</span>
+                                <span class="value">10h 36m 41s, -59° 52' 04"</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-section">
+                    <h3>AI Analysis Results</h3>
+                    <div id="analysis-results">
+                        <p class="no-analysis">Upload an image or run AI analysis to detect celestial objects and patterns.</p>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>Research Notes</h3>
+                    <div class="research-notes">
+                        <textarea placeholder="Add your observations and notes here..." rows="4"></textarea>
+                        <button class="btn-primary small">Save Notes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="database.js"></script>
+</body>
+</html>

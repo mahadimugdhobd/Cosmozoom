@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Open Data - CosmoZoom</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+     Navigation 
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-telescope"></i>
+                <span>CosmoZoom</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="explorer.html" class="nav-link">Explorer</a>
+                <button class="btn-primary" onclick="window.location.href='explorer.html'">Launch Explorer</button>
+            </div>
+        </div>
+    </nav>
+
+     NASA Open Data Content 
+    <main class="policy-page">
+        <div class="container">
+            <div class="policy-header">
+                <h1>NASA Open Data Integration</h1>
+                <p class="last-updated">Powering CosmoZoom with Real Space Data</p>
+            </div>
+
+            <div class="policy-content">
+                <section class="policy-section">
+                    <h2>1. Data Sources</h2>
+                    <p>CosmoZoom integrates with premier NASA data archives:</p>
+                    <ul>
+                        <li><strong>MAST (Mikulski Archive for Space Telescopes):</strong> <a href="https://archive.stsci.edu/" target="_blank">archive.stsci.edu</a></li>
+                        <li><strong>James Webb Space Telescope:</strong> Latest infrared observations</li>
+                        <li><strong>Hubble Space Telescope:</strong> Three decades of visible light imagery</li>
+                        <li><strong>USGS Astrogeology:</strong> <a href="https://astrogeology.usgs.gov/maps" target="_blank">astrogeology.usgs.gov/maps</a></li>
+                    </ul>
+                </section>
+
+                <section class="policy-section">
+                    <h2>2. IIIF Framework Integration</h2>
+                    <p>We utilize the International Image Interoperability Framework (IIIF) for seamless image exploration:</p>
+                    <ul>
+                        <li><strong>IIIF Specification:</strong> <a href="https://iiif.io/" target="_blank">iiif.io</a></li>
+                        <li>Enables infinite zoom capabilities</li>
+                        <li>Supports massive image files (multi-gigabyte)</li>
+                        <li>Provides standardized metadata access</li>
+                        <li>Ensures cross-platform compatibility</li>
+                    </ul>
+                </section>
+
+                <section class="policy-section">
+                    <h2>3. Real-Time Data Access</h2>
+                    <p>CosmoZoom provides access to:</p>
+                    <ul>
+                        <li><strong>850TB+ of JWST data</strong> with real-time updates</li>
+                        <li><strong>1.5M+ Hubble images</strong> spanning 30+ years</li>
+                        <li><strong>Planetary surface maps</strong> for all major celestial bodies</li>
+                        <li><strong>Live mission feeds</strong> from active space missions</li>
+                    </ul>
+                </section>
+
+                <section class="policy-section">
+                    <h2>4. Data Usage and Attribution</h2>
+                    <p>All NASA data used in CosmoZoom follows open data principles:</p>
+                    <ul>
+                        <li>Data is freely available for scientific and educational use</li>
+                        <li>Proper attribution to NASA and mission teams</li>
+                        <li>Compliance with NASA's data usage policies</li>
+                        <li>Support for reproducible research</li>
+                    </ul>
+                </section>
+
+                <section class="policy-section">
+                    <h2>5. API Integration</h2>
+                    <p>Technical implementation details:</p>
+                    <ul>
+                        <li><strong>MAST API:</strong> Direct queries to NASA archives</li>
+                        <li><strong>IIIF Image API:</strong> Efficient image tile serving</li>
+                        <li><strong>WCS (World Coordinate System):</strong> Accurate astronomical coordinates</li>
+                        <li><strong>VOTable Format:</strong> Standard astronomical data exchange</li>
+                    </ul>
+                </section>
+
+                <section class="policy-section">
+                    <h2>6. Citizen Science Contribution</h2>
+                    <p>Your discoveries contribute back to the scientific community:</p>
+                    <ul>
+                        <li>Annotations shared with NASA researchers</li>
+                        <li>AI training data for future missions</li>
+                        <li>Collaborative pattern recognition</li>
+                        <li>Open science data sharing</li>
+                    </ul>
+                </section>
+
+                <section class="policy-section">
+                    <h2>7. Technical Specifications</h2>
+                    <div class="tech-specs">
+                        <div class="spec-item">
+                            <h4>Image Formats</h4>
+                            <p>FITS, JPEG2000, PNG, TIFF</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>Coordinate Systems</h4>
+                            <p>ICRS, FK5, Galactic, Ecliptic</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>Metadata Standards</h4>
+                            <p>FITS headers, Dublin Core, IIIF Presentation</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>API Protocols</h4>
+                            <p>REST, GraphQL, IIIF Image API</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="policy-section">
+                    <h2>8. Data Quality and Validation</h2>
+                    <p>Ensuring scientific accuracy:</p>
+                    <ul>
+                        <li>Direct integration with NASA's authoritative sources</li>
+                        <li>Automated data validation and quality checks</li>
+                        <li>Regular synchronization with mission archives</li>
+                        <li>Peer review of AI-generated discoveries</li>
+                    </ul>
+                </section>
+
+                <section class="policy-section">
+                    <h2>9. Future Enhancements</h2>
+                    <p>Planned integrations and improvements:</p>
+                    <ul>
+                        <li>Roman Space Telescope data (when available)</li>
+                        <li>ESA mission archives integration</li>
+                        <li>Real-time event notifications</li>
+                        <li>Enhanced AI model training</li>
+                    </ul>
+                </section>
+
+                <section class="policy-section">
+                    <h2>10. Contact and Support</h2>
+                    <p>For technical questions about data integration:</p>
+                    <ul>
+                        <li>Email: data@cosmozoom.space</li>
+                        <li>GitHub Issues: github.com/team-mugdho/cosmozoom</li>
+                        <li>NASA MAST Help: archive.stsci.edu/help</li>
+                        <li>IIIF Community: iiif.io/community</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </main>
+
+     Footer 
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <div class="footer-credits">
+                    <p>&copy; 2025 Team Mugdho - NASA Space Apps Challenge</p>
+                    <p>Powered by NASA MAST, USGS Astrogeology, and IIIF</p>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="nasa-open-data.html">NASA Open Data</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
